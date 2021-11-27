@@ -14,9 +14,9 @@ while not validInput:
     try:
         validInput = True
         for i in range(int(input("How many passwords should be generated? "))):
+            pswdList.write('\n')
             for j in range(random.randrange(8, 13)):
                 pswdList.write(charList[random.randrange(len(charList))])
-            pswdList.write('\n')
     except ValueError:
         validInput = False
 pswdList.close()
