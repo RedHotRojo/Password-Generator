@@ -6,6 +6,9 @@ charList = charList if charList else "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGH
 
 pswdList = open("passwords.txt", 'w')
 
+if input("Should the common passwords be appended? (Leave blank for no) "):
+    pswdList.write(open("common_passwords.min.txt").read())
+
 validInput = False;
 while not validInput:
     try:
@@ -16,6 +19,4 @@ while not validInput:
             pswdList.write('\n')
     except ValueError:
         validInput = False
-
-pswdList.write(open("common_passwords.min.txt").read())
 pswdList.close()
